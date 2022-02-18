@@ -1,0 +1,12 @@
+<h2 class="sidebar-title">Популярные статьи:</h2>
+<div class="grid">
+    {% for post in posts %}
+        <div class="portfolio-item popular">
+                <img src="{{ post.photo.url }}" alt="{{ post.title }}">
+                <div class="portfolio-text">
+                    <h5><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
+                    <p>By {{ post.author }} <span>|</span>{{ post.created_at|date:"d.m.Y" }}</p>
+                </div>
+            </div>
+    {% endfor %}
+</div>
